@@ -1,0 +1,7 @@
+@ImaGen_BE_HostAddress = http://localhost:5029
+
+GET {{ImaGen_BE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+j
