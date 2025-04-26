@@ -1,5 +1,13 @@
 name: .NET Build & Deploy
 
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'production'
+
 jobs:
   build:
     runs-on: ubuntu-latest
