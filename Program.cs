@@ -39,7 +39,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("https://localhost:5173")
+                          policy.WithOrigins(["https://localhost:5173", "https://www.imagenai.space", "https://imagenai.space", "https://imagen-fe.onrender.com"])
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                       });
