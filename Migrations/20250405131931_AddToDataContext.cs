@@ -18,7 +18,8 @@ namespace ImaGen_BE.Migrations
                     id = table.Column<string>(type: "text", nullable: false),
                     user_id = table.Column<string>(type: "text", nullable: false),
                     url = table.Column<string>(type: "text", nullable: true),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    size = table.Column<string>(type: "text", nullable: false),
                 },
                 constraints: table =>
                 {
