@@ -22,8 +22,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      
+      # 3. Install dotnet-ef
+      - name: Install dotnet-ef
+        run: dotnet tool install --global dotnet-ef
           
-      # 3. Restore, build, test
+      # 4. Restore, build, test
       - name: Restore dependencies
         run: dotnet restore
 
@@ -33,7 +37,7 @@ jobs:
       - name: Run tests
         run: dotnet test --no-restore --verbosity normal
 
-      # 4. Update Database
+      # 5. Update Database
       - name: Run EF Core migrations
         run: dotnet ef database update --project ImaGen-BE.csproj
         env:
