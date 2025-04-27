@@ -17,7 +17,7 @@ The backend web server for the ImaGen project, which handles user data and AI im
 ### Installation
 Clone the project
 ```bash
-git clone https://github.com/duckng99/ImaGen-BE.git
+git clone https://github.com/davidng1299/ImaGen-BE.git
 cd ImaGen-BE
 ```
 
