@@ -10,7 +10,7 @@ namespace ImaGen_BE.DTOs.OAImageGeneration
         [Required]
         public string Size { get; set; } = OAImageSize.Size1024;
         [Required]
-        public string Style { get; set; } = OAImageStyle.Vivid;
+        public string? Style { get; set; } = null;
         [Required]
         public string Quality { get; set; } = OAImageQuality.Standard;
 
@@ -22,7 +22,7 @@ namespace ImaGen_BE.DTOs.OAImageGeneration
                 results.Add(new ValidationResult($"Invalid image size: '{Size}'."));
             }
 
-            if (!OAImageStyle.AllowedValues.Contains(Style))
+            if (!string.IsNullOrEmpty(Style) && !OAImageStyle.AllowedValues.Contains(Style))
             {
                 results.Add(new ValidationResult($"Invalid image style: '{Style}'."));
             }

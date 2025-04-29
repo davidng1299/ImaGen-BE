@@ -103,7 +103,8 @@ namespace ImaGen_BE.Services
         private string GetDallEModel(OAImageGenerationRequestDto requestDto)
         {
             var DallEModel = OAImageModel.DallE2;
-            if (requestDto.Style == OAImageStyle.Natural || requestDto.Quality == OAImageQuality.Hd)
+
+            if (!string.IsNullOrEmpty(requestDto.Style) || requestDto.Quality == OAImageQuality.Hd)
             {
                 DallEModel = OAImageModel.DallE3;
             }
